@@ -1,0 +1,284 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5f5f5;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #ffffff;
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #80b9e8;
+}
+
+/* HERO */
+.hero {
+  padding: 20px;
+}
+
+.hero-box {
+  height: 250px;
+  background: #16648300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* OPTIONS */
+.options {
+  color: #80b9e8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background: white;
+}
+
+.option {
+  text-align: center;
+}
+
+.options {
+  display: flex !important;
+}
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.option button {
+  padding: 8px 15px;
+  border: 1px solid #333;
+  background: white;
+  color: #80b9e8;        /* Set the text color */
+  font-weight: bold;      /* Makes the text pop */
+  cursor: pointer;
+  transition: color 0.3s, background 0.3s;
+}
+
+.option button:hover {
+  color: white;           /* Text changes on hover */
+  background: #80b9e8;    /* Background changes on hover */
+  border-color: #80b9e8;
+}
+
+/* CONTENT */
+.content {
+  padding: 30px;
+}
+
+/* ROWS */
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* TEXT COLUMN */
+.text {
+  flex: 1;
+  padding: 20px;
+}
+
+/* IMAGE BOX */
+.image-box {
+  flex: 1;
+  height: 300px;                 /* adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #680d0dfc;          /* optional placeholder color */
+  overflow: hidden;               /* crop if image is bigger than box */
+  margin: 0 20px;                 /* spacing between text and image */
+}
+
+.image-box img.content-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;              /* fill box without stretching */
+  display: block;
+}
+
+/* HERO IMAGE */
+.main-image {
+  display: block;
+  width: 100%;
+  height: 600px;                  /* adjust hero height */
+  object-fit: cover;              /* keep proportions */
+  margin: 20px 0;                 /* optional spacing */
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 760px) {
+  .row, .row.reverse {
+    flex-direction: column;        /* stack text and image */
+  }
+
+  .image-box {
+    width: 100%;
+    height: 250px;                /* taller for mobile */
+    margin: 10px 0;
+  }
+}
+
+/* ===== LOGIN PAGE ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #81b8ec;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+  color: #80b9e8;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* Login Section */
+.login-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.login-section h2 {
+  color: #166483;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+/* Login Box */
+.login-box {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Form Styling */
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-box input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.login-btn, .login-box button {
+  padding: 12px;
+  background-color: #166483;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover, .login-box button:hover {
+  background-color: #80b9e8;
+}
+
+/* Register link */
+.login-box p {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.login-box p a {
+  color: #166483;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-box p a:hover {
+  color: #80b9e8;
+}
+
+/* Back to Home link */
+.return-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #166483;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.return-link:hover {
+  color: #80b9e8;
+}
+  
+.login-image {
+  width: 200px;          /* adjust size as needed */
+  height: 200px;
+  object-fit: cover;     /* ensures the image fills the circle */
+  border-radius: 50%;    /* makes it circular */
+  margin: 0 auto 20px;   /* centers it horizontally and adds space below */
+  display: block;
+  border: 3px solid #166483; /* optional: border to make it pop */
+}
+
+/* @media (max-width:760p){
+
+.image-box {
+  flex: 1;
+  height: 100
+  background: #680d0dfc;
+}
+main-image {
+  max-width: 100%;
+  height: auto;
+}  */
+
+
+
+ 
