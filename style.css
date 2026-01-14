@@ -1,25 +1,41 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
 }
 
 body {
   margin: 0;
-  background: #f5f5f5;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  min-height: 100vh;
 }
 
 /* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 30px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #80b9e8;
 }
 
 .navbar a {
   margin-left: 20px;
   text-decoration: none;
   color: #80b9e8;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #166483;
 }
 
 /* HERO */
@@ -29,10 +45,19 @@ body {
 
 .hero-box {
   height: 250px;
-  background: #16648300;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* HERO IMAGE */
+.main-image {
+  display: block;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  margin: 20px 0;
 }
 
 /* OPTIONS */
@@ -49,9 +74,6 @@ body {
   text-align: center;
 }
 
-.options {
-  display: flex !important;
-}
 .circle {
   width: 150px;
   height: 150px;
@@ -74,15 +96,15 @@ body {
   padding: 8px 15px;
   border: 1px solid #333;
   background: white;
-  color: #80b9e8;        /* Set the text color */
-  font-weight: bold;      /* Makes the text pop */
+  color: #80b9e8;
+  font-weight: bold;
   cursor: pointer;
   transition: color 0.3s, background 0.3s;
 }
 
 .option button:hover {
-  color: white;           /* Text changes on hover */
-  background: #80b9e8;    /* Background changes on hover */
+  color: white;
+  background: #80b9e8;
   border-color: #80b9e8;
 }
 
@@ -111,73 +133,29 @@ body {
 /* IMAGE BOX */
 .image-box {
   flex: 1;
-  height: 300px;                 /* adjust height as needed */
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #680d0dfc;          /* optional placeholder color */
-  overflow: hidden;               /* crop if image is bigger than box */
-  margin: 0 20px;                 /* spacing between text and image */
+  background: #680d0dfc;
+  overflow: hidden;
+  margin: 0 20px;
 }
 
 .image-box img.content-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;              /* fill box without stretching */
+  object-fit: cover;
   display: block;
-}
-
-/* HERO IMAGE */
-.main-image {
-  display: block;
-  width: 100%;
-  height: 600px;                  /* adjust hero height */
-  object-fit: cover;              /* keep proportions */
-  margin: 20px 0;                 /* optional spacing */
-}
-
-/* RESPONSIVE MOBILE */
-@media (max-width: 760px) {
-  .row, .row.reverse {
-    flex-direction: column;        /* stack text and image */
-  }
-
-  .image-box {
-    width: 100%;
-    height: 250px;                /* taller for mobile */
-    margin: 10px 0;
-  }
 }
 
 /* ===== LOGIN PAGE ===== */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #81b8ec;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.navbar a {
-  color: #80b9e8;
-  text-decoration: none;
-  margin-left: 20px;
-}
-
-/* Login Section */
 .login-section {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  min-height: 80vh;
-  padding: 20px;
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
 }
 
 .login-section h2 {
@@ -188,65 +166,105 @@ body {
 
 /* Login Box */
 .login-box {
-  background-color: white;
-  padding: 40px 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   max-width: 400px;
   width: 100%;
   text-align: center;
 }
 
+.login-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: block;
+  border: 4px solid #166483;
+}
+
+h2 {
+  color: #166483;
+  margin-bottom: 1.5rem;
+}
+
 /* Form Styling */
+form {
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-weight: bold;
+}
+
 .login-box form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
-.login-box input {
-  padding: 10px;
+.login-box input,
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  transition: border-color 0.3s;
 }
 
-.login-btn, .login-box button {
-  padding: 12px;
-  background-color: #166483;
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-color: #166483;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #166483, #80b9e8);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: transform 0.2s;
 }
 
-.login-btn:hover, .login-box button:hover {
-  background-color: #80b9e8;
+.login-btn:hover {
+  transform: translateY(-2px);
 }
 
-/* Register link */
 .login-box p {
-  margin-top: 15px;
+  margin-top: 1rem;
+  color: #666;
   font-size: 0.9rem;
-  color: #333;
 }
 
-.login-box p a {
+.login-box a {
   color: #166483;
   text-decoration: none;
   font-weight: bold;
 }
 
-.login-box p a:hover {
+.login-box a:hover {
+  text-decoration: underline;
   color: #80b9e8;
 }
 
 /* Back to Home link */
 .return-link {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 1rem;
   color: #166483;
   text-decoration: none;
   font-weight: bold;
@@ -256,29 +274,97 @@ body {
 .return-link:hover {
   color: #80b9e8;
 }
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  animation: slideDown 0.3s;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #166483;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 0.875rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.success-message {
+  color: #44bb44;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 760px) {
+  .row, 
+  .row.reverse {
+    flex-direction: column;
+  }
+
+  .image-box {
+    width: 100%;
+    height: 250px;
+    margin: 10px 0;
+  }
   
-.login-image {
-  width: 200px;          /* adjust size as needed */
-  height: 200px;
-  object-fit: cover;     /* ensures the image fills the circle */
-  border-radius: 50%;    /* makes it circular */
-  margin: 0 auto 20px;   /* centers it horizontally and adds space below */
-  display: block;
-  border: 3px solid #166483; /* optional: border to make it pop */
+  .main-image {
+    height: auto;
+  }
+  
 }
-
-/* @media (max-width:760p){
-
-.image-box {
-  flex: 1;
-  height: 100
-  background: #680d0dfc;
-}
-main-image {
-  max-width: 100%;
-  height: auto;
-}  */
-
-
-
- 
